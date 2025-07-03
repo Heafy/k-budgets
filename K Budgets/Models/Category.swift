@@ -33,3 +33,9 @@ class Category: Identifiable {
         self.transactions = []
     }
 }
+
+extension Category: CustomStringConvertible {
+    var description: String {
+        "Category(name: \(name), icon: \(iconName), color: \(color))"
+    }
+}

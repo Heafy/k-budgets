@@ -12,6 +12,11 @@ import SwiftData
 struct K_BudgetsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
+            Account.self,
+            Budget.self,
+            Category.self,
+            KColor.self,
+            Transaction.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -43,3 +43,9 @@ enum TransactionType: String, Codable, CaseIterable {
     case income = "Income"
     case transfer = "Transfer"
 }
+
+extension Transaction: CustomStringConvertible {
+    var description: String {
+        "Transaction(amount: \(amount), type: \(type.rawValue), concept: \(concept), date: \(date), category: \(category.name), account: \(account.name))"
+    }
+}

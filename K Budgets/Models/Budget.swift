@@ -40,3 +40,9 @@ class Budget: Identifiable {
         amount - totalSpent(from: transactions)
     }
 }
+
+extension Budget: CustomStringConvertible {
+    var description: String {
+        "Budget(name: \(name), amount: \(amount), categories: \(categories.map(\.name)))"
+    }
+}

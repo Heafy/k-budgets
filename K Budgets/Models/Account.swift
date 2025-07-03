@@ -14,7 +14,7 @@ class Account: Identifiable {
     var name: String
     var iconName: String
     
-    @Relationship
+    @Relationship(deleteRule: .nullify)
     var color: KColor
     
     var initialBalance: Double
@@ -41,5 +41,11 @@ class Account: Identifiable {
         let incomes = transactions.filter { $0.type == .income }.map(\.amount).reduce(0, +)
         let expenses = transactions.filter { $0.type == .expense }.map(\.amount).reduce(0, +)
         return initialBalance + incomes - expenses
+    }
+}
+
+extension Account: CustomStringConvertible {
+    var description: String {
+        "Account(name: \(name), icon: \(iconName), color: \(color.description), initialBalance: \(initialBalance), currentBalance: \(currentBalance))"
     }
 }

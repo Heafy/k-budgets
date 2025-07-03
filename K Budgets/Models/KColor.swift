@@ -38,3 +38,9 @@ class KColor {
         return KColor(red: r, green: g, blue: b, opacity: a)
     }
 }
+
+extension KColor: CustomStringConvertible {
+    var description: String {
+        return "KColor(red: \(red), green: \(green), blue: \(blue), opacity: \(opacity))"
+    }
+}
